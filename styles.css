@@ -1,4 +1,3 @@
-
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
@@ -77,13 +76,15 @@ button:hover {
 }
 
 /* 과목별 색상 */
-.math { background-color: #FFD700; }
-.science { background-color: #98FB98; }
-.english { background-color: #87CEFA; }
-.history { background-color: #FFA07A; }
+#timer.국어 { background-color: #FFC0CB; } /* 분홍색 */
+#timer.수학 { background-color: #FFD700; } /* 노란색 */
+#timer.영어 { background-color: #87CEFA; } /* 하늘색 */
+#timer.사탐 { background-color: #FFA07A; } /* 연어색 */
+#timer.과탐 { background-color: #98FB98; } /* 연두색 */
+#timer.논술 { background-color: #D8BFD8; } /* 보라색 */
 
 /* 휴식 시간 색상 */
-.break { background-color: #20B2AA; }
+#timer.break { background-color: #20B2AA; }
 
 #achievements {
     display: flex;
@@ -104,4 +105,22 @@ button:hover {
     background-color: #4CAF50;
     margin-top: 5px;
     border-radius: 5px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+        max-width: 100%;
+    }
+
+    .timer {
+        font-size: 3rem;
+    }
+
+    select, input, button {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+        margin: 0.3rem;
+    }
 }
