@@ -7,6 +7,7 @@
     <title>고급 포모도로 타이머</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
@@ -33,9 +34,21 @@
             <label>작업 시간 (분): <input type="number" id="workTime" value="25" min="1" max="60"></label>
             <label>휴식 시간 (분): <input type="number" id="breakTime" value="5" min="1" max="30"></label>
         </div>
+        <div class="goals">
+            <h3>일일 목표 설정</h3>
+            <div id="goalInputs"></div>
+            <button id="saveGoals">목표 저장</button>
+        </div>
         <div class="stats">
             <h3>통계</h3>
-            <ul id="statslist"></ul>
+            <div class="chart-container">
+                <canvas id="dailyChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="weeklyChart"></canvas>
+            </div>
+            <h4>성취도</h4>
+            <div id="achievements"></div>
         </div>
     </div>
     <audio id="alarmSound" src="https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3"></audio>
