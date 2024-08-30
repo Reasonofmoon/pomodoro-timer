@@ -1,5 +1,3 @@
-// script.js
-
 let interval;
 let timeLeft;
 let isRunning = false;
@@ -28,23 +26,36 @@ function updateDisplay() {
     sessionType.textContent = isWorkSession ? '작업 시간' : '휴식 시간';
     sessionCount.textContent = `세션: ${currentSession}/4`;
     timer.className = isWorkSession ? subjectSelect.value : 'break';
+    document.body.className = isWorkSession ? subjectSelect.value : 'break'; // 과목명에 따라 배경색 변경
+}
+
+// Initialize or reset the timer
+function initializeTimer() {
+    clearInterval(interval);
+    timeLeft = workTimeInput.value * 60;
+    isWorkSession = true;
+    currentSession = 1;
+    updateDisplay();
 }
 
 // Start the timer
 function startTimer() {
-    if (!isRunning) {
-        isRunning = true;
-        interval = setInterval(() => {
-            if (timeLeft > 0) {
-                timeLeft--;
-                updateDisplay();
-            } else {
-                clearInterval(interval);
-                alarmSound.play(); // 타이머 종료 시에만 알람 소리 재생
-                handleSessionEnd();
-            }
-        }, 1000);
+    if (isRunning) {
+        alert("타이머가 이미 실행 중입니다.");
+        return;
     }
+    
+    isRunning = true;
+    interval = setInterval(() => {
+        if (timeLeft > 0) {
+            timeLeft--;
+            updateDisplay();
+        } else {
+            clearInterval(interval);
+            alarmSound.play(); // 타이머 종료 시에만 알람 소리 재생
+            handleSessionEnd();
+        }
+    }, 1000);
 }
 
 // Pause the timer
@@ -55,12 +66,8 @@ function pauseTimer() {
 
 // Reset the timer
 function resetTimer() {
-    clearInterval(interval);
     isRunning = false;
-    timeLeft = workTimeInput.value * 60;
-    isWorkSession = true;
-    currentSession = 1;
-    updateDisplay();
+    initializeTimer();
 }
 
 // Handle the end of a session
@@ -98,6 +105,5 @@ pauseBtn.addEventListener('click', pauseTimer);
 resetBtn.addEventListener('click', resetTimer);
 
 // Initialize the timer on page load
-timeLeft = workTimeInput.value * 60;
-updateDisplay();
+initializeTimer();
 alarmSound.load(); // 알람 사전 로드
