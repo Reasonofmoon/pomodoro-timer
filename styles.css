@@ -1,0 +1,108 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.timer {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.subject-select {
+    margin-bottom: 1rem;
+}
+
+select {
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+.buttons {
+    margin-bottom: 1rem;
+}
+
+button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#pauseBtn {
+    background-color: #f44336;
+}
+
+#resetBtn {
+    background-color: #008CBA;
+}
+
+.session-info {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.settings {
+    margin-bottom: 1rem;
+}
+
+.settings label {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+.settings input {
+    width: 50px;
+}
+
+.stats {
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.stats ul {
+    padding-left: 20px;
+}
+
+/* 과목별 색상 */
+.math { background-color: #FFD700; }
+.science { background-color: #98FB98; }
+.english { background-color: #87CEFA; }
+.history { background-color: #FFA07A; }
+
+/* 휴식 시간 색상 */
+.break { background-color: #20B2AA; }

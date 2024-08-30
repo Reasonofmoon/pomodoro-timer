@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고급 포모도로 타이머</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>고급 포모도로 타이머</h1>
+        <div id="timer" class="timer">25:00</div>
+        <div class="subject-select">
+            <select id="subjectSelect">
+                <option value="math">수학</option>
+                <option value="science">과학</option>
+                <option value="english">영어</option>
+                <option value="history">역사</option>
+            </select>
+        </div>
+        <div class="buttons">
+            <button id="startBtn"><i class="fas fa-play"></i> 시작</button>
+            <button id="pauseBtn"><i class="fas fa-pause"></i> 일시정지</button>
+            <button id="resetBtn"><i class="fas fa-redo"></i> 리셋</button>
+        </div>
+        <div class="session-info">
+            <span id="sessionType">작업 시간</span>
+            <span id="sessionCount">세션: 1/4</span>
+        </div>
+        <div class="settings">
+            <label>작업 시간 (분): <input type="number" id="workTime" value="25" min="1" max="60"></label>
+            <label>휴식 시간 (분): <input type="number" id="breakTime" value="5" min="1" max="30"></label>
+        </div>
+        <div class="stats">
+            <h3>통계</h3>
+            <ul id="statslist"></ul>
+        </div>
+    </div>
+    <audio id="alarmSound" src="https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
